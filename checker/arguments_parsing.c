@@ -6,7 +6,7 @@
 /*   By: fvizcaya <fvizcaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:09:44 by fvizcaya          #+#    #+#             */
-/*   Updated: 2024/07/04 14:00:01 by fvizcaya         ###   ########.fr       */
+/*   Updated: 2024/07/07 17:27:21 by fvizcaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	*ft_parse_args(char **argv)
 	if (ft_args_overflow(argv) == -1)
 		return (NULL);
 	num_list = ft_args_to_int(argv);
-	if (ft_args_int_unique(num_list) == -1)
+	if (ft_args_int_unique(num_list, ft_count_numbers(argv)) == -1)
 		return (NULL);
 	return (num_list);
 }
@@ -88,6 +88,7 @@ int	*ft_args_to_int(char **argv)
 			j++;
 		}
 		i++;
+		ft_free_split(buff);
 	}
 	return (num_list - ft_count_numbers(argv));
 }

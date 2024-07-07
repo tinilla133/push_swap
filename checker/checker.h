@@ -6,7 +6,7 @@
 /*   By: fvizcaya <fvizcaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:41:59 by fvizcaya          #+#    #+#             */
-/*   Updated: 2024/07/05 19:34:50 by fvizcaya         ###   ########.fr       */
+/*   Updated: 2024/07/07 17:26:43 by fvizcaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int			*ft_parse_args(char **argv);
 int			ft_invalid_chars(char **argv);
 int			ft_empty_string(char **argv);
 int			ft_count_numbers(char **argv);
-int			ft_args_int_unique(int *numbers);
+int			ft_args_int_unique(int *numbers, int size);
 int			ft_str_int_overflow(char *str);
 int			ft_args_overflow(char **argv);
 int			*ft_args_to_int(char **argv);

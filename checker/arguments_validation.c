@@ -6,7 +6,7 @@
 /*   By: fvizcaya <fvizcaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:23:58 by fvizcaya          #+#    #+#             */
-/*   Updated: 2024/07/04 12:19:37 by fvizcaya         ###   ########.fr       */
+/*   Updated: 2024/07/07 17:26:17 by fvizcaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,16 @@ int	ft_empty_string(char **argv)
  *	Otherwise, returns 0.
  */
 
-int	ft_args_int_unique(int *numbers)
+int	ft_args_int_unique(int *numbers, int size)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (numbers[i])
+	while (i < size)
 	{
 		j = i + 1;
-		while (numbers[j])
+		while (j < size)
 		{
 			if (numbers[i] == numbers[j])
 				return (-1);
