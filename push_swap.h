@@ -6,7 +6,7 @@
 /*   By: fvizcaya <fvizcaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:33:13 by fvizcaya          #+#    #+#             */
-/*   Updated: 2024/07/05 19:31:08 by fvizcaya         ###   ########.fr       */
+/*   Updated: 2024/07/07 16:47:53 by fvizcaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,14 @@ void		ft_sort_three(t_stack *stack);
 void		ft_sort_four(t_stack *stack_a, t_stack *stack_b);
 void		ft_sort_five(t_stack *stack_a, t_stack *stack_b);
 void		ft_sort_six(t_stack *stack_a, t_stack *stack_b);
+void		ft_simple_sort(t_stack *stack_a, t_stack *stack_b);
 void		ft_sort_larger(t_stack *stack_a, t_stack *stack_b, \
 				int pivot, int interval);
 void		ft_set_indexes(t_stack *stack);
 int			ft_find_highest_index(t_stack stack);
 int			ft_find_highest(t_stack stack);
+int			ft_find_lowest(t_stack stack);
+int			ft_find_lowest_index(t_stack stack);
 void		ft_push_back(t_stack *stack_a, t_stack *stack_b);
 int			push_swap(t_stack *stack_a, t_stack *stack_b);
 void		ft_rotate_to_head(t_stack *stack, int key, \

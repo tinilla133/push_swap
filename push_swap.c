@@ -6,7 +6,7 @@
 /*   By: fvizcaya <fvizcaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 18:56:08 by fvizcaya          #+#    #+#             */
-/*   Updated: 2024/07/05 19:31:51 by fvizcaya         ###   ########.fr       */
+/*   Updated: 2024/07/07 16:59:18 by fvizcaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,24 @@ int	push_swap(t_stack *stack_a, t_stack *stack_b)
 void	ft_sort_larger(t_stack *stack_a, t_stack *stack_b, \
 			int pivot, int interval)
 {
-	while (!ft_isorted(*stack_a))
+	while (stack_a->size)
 	{
-		while (stack_a->size)
+		if (stack_a->array[stack_a->pointer].index <= pivot)
 		{
-			if (stack_a->array[stack_a->pointer].index <= pivot)
-			{
-				ft_push(stack_a, stack_b, 'b');
-				ft_rotate(stack_b, 'b');
-				pivot++;
-			}
-			else if (stack_a->array[stack_a->pointer].index <= pivot + interval)
-			{
-				ft_push(stack_a, stack_b, 'b');
-				pivot++;
-			}
-			else
-				ft_rotate(stack_a, 'a');
+			ft_push(stack_a, stack_b, 'b');
+			ft_rotate(stack_b, 'b');
+			pivot++;
 		}
-		while (stack_b->size)
-			ft_push_back(stack_a, stack_b);
+		else if (stack_a->array[stack_a->pointer].index <= pivot + interval)
+		{
+			ft_push(stack_a, stack_b, 'b');
+			pivot++;
+		}
+		else
+			ft_rotate(stack_a, 'a');
 	}
+	while (stack_b->size)
+		ft_push_back(stack_a, stack_b);
 }
 
 /*
