@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arguments_parsing.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvizcaya <fvizcaya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tinilla <tinilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:09:44 by fvizcaya          #+#    #+#             */
-/*   Updated: 2024/07/05 19:08:40 by fvizcaya         ###   ########.fr       */
+/*   Updated: 2024/07/08 19:31:04 by tinilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	*ft_parse_args(char **argv)
 		return (NULL);
 	num_list = ft_args_to_int(argv);
 	if (ft_args_int_unique(num_list, ft_count_numbers(argv)) == -1)
-		return (NULL);
+		return (free(num_list), NULL);
 	return (num_list);
 }
 

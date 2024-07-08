@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang
+CC = clang 
 CFLAGS = -Wall -Wextra -Werror -g
 
 NAME = push_swap
